@@ -3,67 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Inmersivo con GSAP</title>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;800&display=swap" rel="stylesheet">
+    <title>Portfolio Excepcional con GSAP y WebGL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="preloader">
-        <div class="preloader-text">Cargando...</div>
+    <div id="preloader">
+        <div id="percent">0</div>
     </div>
 
-    <div class="cursor-follow"></div>
+    <div id="webgl-canvas"></div>
 
-    <main class="main-content">
-        <section class="hero">
-            <h1 class="hero-title">
-                <span>Diseñador</span>
-                <span class="stroke">Creativo</span>
-            </h1>
+    <main id="container">
+        <section class="panel hero">
+            <h1 class="hero-title" data-splitting>Creative Coder</h1>
         </section>
 
-        <section class="about">
+        <section class="panel about">
             <div class="about-wrapper">
-                <div class="about-text">
-                    <h2>Narrador Visual</h2>
-                    <p>Convierto ideas en experiencias digitales que no solo se ven, sino que se sienten. Mi pasión es crear interfaces que cuenten una historia y dejen una impresión duradera.</p>
-                </div>
+                <p class="about-text" data-splitting>Mi misión es fusionar diseño y tecnología para construir experiencias digitales que inspiren y perduren.</p>
             </div>
         </section>
 
-        <section class="projects-section">
-            <div class="projects-container">
-                <div class="project-item" data-img="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
-                    <h3>Proyecto Uno</h3>
+        <section class="panel projects">
+            <h2 class="section-title" data-splitting>Proyectos</h2>
+            <div class="projects-list">
+                <div class="project-item">
+                    <a href="#" class="project-link" data-img="https://images.unsplash.com/photo-1555949963-ff98c8726514?q=80&w=2070&auto=format&fit=crop">Proyecto Alfa</a>
                 </div>
-                <div class="project-item" data-img="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
-                    <h3>Proyecto Dos</h3>
+                <div class="project-item">
+                    <a href="#" class="project-link" data-img="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop">Proyecto Beta</a>
                 </div>
-                <div class="project-item" data-img="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
-                    <h3>Proyecto Tres</h3>
-                </div>
-                 <div class="project-item" data-img="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
-                    <h3>Proyecto Cuatro</h3>
+                <div class="project-item">
+                    <a href="#" class="project-link" data-img="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=2070&auto=format&fit=crop">Proyecto Gamma</a>
                 </div>
             </div>
+            <div class="project-image-preview"></div>
         </section>
 
-        <section class="skills">
-            <h2>Habilidades</h2>
-            <div class="skills-list">
-                <span>GSAP</span> <span>JavaScript</span> <span>Three.js</span> <span>React</span> <span>Node.js</span> <span>Figma</span>
-            </div>
-        </section>
-
-        <section class="contact">
-            <h2>Hablemos.</h2>
-            <a href="mailto:hola@ejemplo.com" class="contact-link">hola@ejemplo.com</a>
+        <section class="panel contact">
+            <h2 class="section-title" data-splitting>Hablemos</h2>
+            <a href="mailto:contacto@sitio.com" class="contact-email">contacto@sitio.com</a>
         </section>
     </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
+    <!-- Librerías de Animación -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+
+    <!-- Librería de Scroll Suave -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+
+    <!-- Librería de WebGL -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Script Principal -->
     <script src="script.js"></script>
 </body>
 </html>

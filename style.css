@@ -1,63 +1,114 @@
 
+:root {
+    --bg-color: #0a0a0a;
+    --text-color: #f0f0f0;
+    --accent-color: #ff3c00;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #1a1a1a;
-    color: #fff;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Syne', sans-serif;
     margin: 0;
-    overflow-x: hidden;
+    cursor: none;
 }
 
-.container {
+.cursor-follow {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-}
-
-section {
-    padding: 100px;
-    border-bottom: 1px solid #333;
-}
-
-.section-hero {
-    height: 100vh;
+    height: 100%;
+    background-color: var(--bg-color);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    z-index: 1000;
 }
 
-.section-hero h1 {
-    font-size: 5rem;
-    margin: 0;
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.section-projects {
-    overflow: hidden;
+.hero-title {
+    font-size: 10vw;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.hero-title span {
+    display: block;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.hero-title .stroke {
+    -webkit-text-stroke: 2px var(--text-color);
+    color: transparent;
+}
+
+.about {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects-section {
     padding: 100px 0;
+    overflow: hidden;
 }
 
 .projects-container {
     display: flex;
-    width: 400%; /* 4 projects * 100% width */
 }
 
-.project {
+.project-item {
     width: 100vw;
-    height: 50vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
-    border: 1px solid #fff;
-    margin: 0 50px;
+    font-size: 5vw;
+    background-size: cover;
+    background-position: center;
 }
 
-.section-skills ul {
-    list-style: none;
-    padding: 0;
+.skills {
+    padding: 150px 5%;
+    text-align: center;
 }
 
-.section-skills li {
-    margin-bottom: 10px;
-    opacity: 0;
-    transform: translateY(20px);
+.skills-list span {
+    font-size: 6vw;
+    margin: 0 20px;
+    display: inline-block;
+}
+
+.contact {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-link {
+    font-size: 4vw;
+    color: var(--text-color);
+    text-decoration: none;
 }

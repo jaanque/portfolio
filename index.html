@@ -3,50 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Profesional con GSAP</title>
+    <title>Portfolio Inmersivo con GSAP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <section class="section-hero">
-            <h1>Creative Developer</h1>
-            <p>Diseño y desarrollo experiencias web únicas.</p>
+    <div class="preloader">
+        <div class="preloader-text">Cargando...</div>
+    </div>
+
+    <div class="cursor-follow"></div>
+
+    <main class="main-content">
+        <section class="hero">
+            <h1 class="hero-title">
+                <span>Diseñador</span>
+                <span class="stroke">Creativo</span>
+            </h1>
         </section>
-        <section class="section-about">
-            <h2>Sobre mí</h2>
-            <p>Soy un desarrollador apasionado por la creación de interfaces interactivas y animaciones fluidas que mejoran la experiencia del usuario.</p>
-        </section>
-        <section class="section-projects">
-            <h2>Proyectos</h2>
-            <div class="projects-container">
-                <div class="project">Proyecto 1</div>
-                <div class="project">Proyecto 2</div>
-                <div class="project">Proyecto 3</div>
-                <div class="project">Proyecto 4</div>
+
+        <section class="about">
+            <div class="about-wrapper">
+                <div class="about-text">
+                    <h2>Narrador Visual</h2>
+                    <p>Convierto ideas en experiencias digitales que no solo se ven, sino que se sienten. Mi pasión es crear interfaces que cuenten una historia y dejen una impresión duradera.</p>
+                </div>
             </div>
         </section>
-        <section class="section-skills">
+
+        <section class="projects-section">
+            <div class="projects-container">
+                <div class="project-item" data-img="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
+                    <h3>Proyecto Uno</h3>
+                </div>
+                <div class="project-item" data-img="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
+                    <h3>Proyecto Dos</h3>
+                </div>
+                <div class="project-item" data-img="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
+                    <h3>Proyecto Tres</h3>
+                </div>
+                 <div class="project-item" data-img="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
+                    <h3>Proyecto Cuatro</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills">
             <h2>Habilidades</h2>
-            <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>GSAP</li>
-                <li>React</li>
-            </ul>
+            <div class="skills-list">
+                <span>GSAP</span> <span>JavaScript</span> <span>Three.js</span> <span>React</span> <span>Node.js</span> <span>Figma</span>
+            </div>
         </section>
-        <section class="section-contact">
-            <h2>Contacto</h2>
-            <form>
-                <input type="text" placeholder="Nombre">
-                <input type="email" placeholder="Email">
-                <textarea placeholder="Mensaje"></textarea>
-                <button type="submit">Enviar</button>
-            </form>
+
+        <section class="contact">
+            <h2>Hablemos.</h2>
+            <a href="mailto:hola@ejemplo.com" class="contact-link">hola@ejemplo.com</a>
         </section>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

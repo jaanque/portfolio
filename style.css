@@ -1,8 +1,9 @@
 
 :root {
-    --background-color: #0d0d0d;
-    --text-color: #e5e5e5;
-    --accent-color: #ffffff;
+    --background-color: #000000;
+    --text-color: #FFFFFF;
+    --button-bg-color: #FFFFFF;
+    --button-text-color: #000000;
 }
 
 * {
@@ -11,19 +12,15 @@
     box-sizing: border-box;
 }
 
-html {
-    height: 100%;
-}
-
 body {
-    font-family: 'Inter', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
-    overflow: hidden; /* Lenis handles the scroll */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    overflow-x: hidden;
 }
 
-/* Preloader */
-#preloader {
+.preloader {
     position: fixed;
     top: 0;
     left: 0;
@@ -34,109 +31,110 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    font-size: 2rem;
 }
 
-#percent {
-    font-size: 1.5rem;
-    font-weight: 400;
-}
-
-/* WebGL Canvas */
-#webgl-canvas {
+.header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+    z-index: 100;
 }
 
-/* Main Container */
-#container {
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.logo-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 0.5rem;
+}
+
+.nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 0.9rem;
+}
+
+.user-actions button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+}
+
+.btn-login {
+    background: transparent;
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+}
+
+.btn-signup {
+    background: var(--button-bg-color);
+    color: var(--button-text-color);
+}
+
+.scene-container {
+    width: 100%;
+    height: 100vh;
     position: relative;
+    overflow: hidden;
+}
+
+.scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-layer {
     z-index: 10;
 }
 
-/* Panels */
-.panel {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 5%;
-    position: relative;
-}
-
-/* Hero Section */
 .hero-title {
-    font-size: clamp(3rem, 12vw, 15rem);
-    font-weight: 900;
+    font-size: clamp(4rem, 15vw, 18rem);
     text-align: center;
-    line-height: 1;
-    text-transform: uppercase;
+    line-height: 0.9;
+    color: var(--text-color);
 }
 
-/* Shared styles for SplitType */
-.char, .word {
-    display: inline-block;
-    visibility: hidden; /* Hide until animated */
-}
-
-/* About Section */
-.about-wrapper {
-    max-width: 50ch; /* Optimal line length for readability */
-}
-
-.about-text {
-    font-size: clamp(1.5rem, 4vw, 3rem);
-    line-height: 1.4;
-}
-
-/* Projects Section */
-.section-title {
-    font-size: clamp(3rem, 8vw, 10rem);
-    position: absolute;
-    top: 10%;
-    font-weight: 900;
-}
-
-.projects-list {
-    text-align: center;
-}
-
-.project-link {
+.hero-title .line {
     display: block;
-    font-size: clamp(2rem, 6vw, 5rem);
-    font-weight: 900;
-    text-decoration: none;
-    color: var(--text-color);
-    padding: 0.2em 0;
-    transition: opacity 0.3s;
+    /* Prepare for animation */
+    visibility: hidden;
 }
 
-.project-image-preview {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 400px;
-    height: 250px;
-    background-size: cover;
-    background-position: center;
-    pointer-events: none;
-    z-index: 5;
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.8);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+.asset {
+    position: absolute;
+    object-fit: contain;
+    /* Prepare for animation */
+    visibility: hidden;
 }
 
-
-/* Contact Section */
-.contact-email {
-    font-size: clamp(1.5rem, 5vw, 4rem);
-    font-weight: 900;
-    color: var(--text-color);
-    text-decoration: none;
+.content-section {
+    padding: 100px 5%;
+    height: 100vh; /* Just for scroll demonstration */
     position: relative;
+    z-index: 20;
+    background: var(--background-color);
 }
